@@ -127,3 +127,68 @@
 @media (max-width: 480px) {
   .floating-avatar { width: 88px; height: 88px; right: 12px; bottom: max(14px, env(safe-area-inset-bottom)); }
 }
+/* MOBILE PHOTO POSITION — BESIDE NAME */
+
+@media screen and (max-width: 900px) {
+
+    .floating-avatar {
+        display: block !important;
+        position: fixed !important;
+
+        top: 205px !important;
+        bottom: auto !important;
+        right: 5% !important;
+
+        width: 130px !important;
+        height: 155px !important;
+
+        border-radius: 18px;
+        overflow: hidden;
+
+        border: 2px solid #00E5FF;
+
+        box-shadow:
+            0 0 18px rgba(0, 229, 255, 0.3),
+            0 0 30px rgba(168, 85, 247, 0.2);
+
+        z-index: 900;
+    }
+
+    .floating-avatar-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    /* Make space for the photo beside your name */
+    .hero-content .small-text,
+    .hero-content h1 {
+        max-width: calc(100% - 145px);
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 48px);
+        overflow-wrap: normal;
+    }
+}
+
+/* SMALL PHONES */
+
+@media screen and (max-width: 390px) {
+
+    .floating-avatar {
+        width: 105px !important;
+        height: 130px !important;
+        top: 205px !important;
+        right: 5% !important;
+    }
+
+    .hero-content .small-text,
+    .hero-content h1 {
+        max-width: calc(100% - 115px);
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+}
