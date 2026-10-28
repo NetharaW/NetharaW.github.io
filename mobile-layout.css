@@ -60,7 +60,24 @@
     letter-spacing: -.035em;
     overflow-wrap: anywhere;
   }
-  .floating-avatar { display: none; }
+  /* Keep the original GitHub-to-graduation photo transition on mobile. */
+  .floating-avatar {
+    display: block;
+    position: fixed;
+    top: auto;
+    bottom: max(20px, env(safe-area-inset-bottom));
+    right: 16px;
+    width: 104px;
+    height: 104px;
+    border-radius: 20px;
+    z-index: 900;
+    pointer-events: none;
+    box-shadow: 0 10px 35px rgba(0, 229, 255, .12),
+                0 8px 26px rgba(59, 10, 107, .28);
+  }
+  .floating-avatar-img { width: 100%; height: 100%; object-fit: cover; }
+  .floating-avatar.hide-avatar { opacity: 0; visibility: hidden; }
+
   .skills-grid, .projects-grid, .certifications-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
@@ -105,4 +122,8 @@
 }
 @media (prefers-reduced-motion: reduce) {
   nav .nav-links { scroll-behavior: auto; }
+}
+
+@media (max-width: 480px) {
+  .floating-avatar { width: 88px; height: 88px; right: 12px; bottom: max(14px, env(safe-area-inset-bottom)); }
 }
