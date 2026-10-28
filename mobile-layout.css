@@ -1,5 +1,4 @@
-/* Nethara portfolio: mobile layout overrides.
-   Load AFTER style.css and neon-theme.css. Desktop remains unchanged. */
+
 @media (max-width: 900px) {
   html { scroll-padding-top: 132px; }
   body { min-width: 0; }
