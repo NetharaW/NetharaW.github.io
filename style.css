@@ -1186,3 +1186,66 @@ display: block;
     font-size: 13px;
     margin-bottom: 12px;
 }
+
+/* MOBILE AVATAR VISIBILITY FIX */
+
+@media screen and (max-width: 900px) {
+
+    .floating-avatar {
+        display: block !important;
+        position: fixed !important;
+
+        top: auto !important;
+        bottom: 20px !important;
+        right: 15px !important;
+
+        width: 110px !important;
+        height: 110px !important;
+
+        opacity: 1;
+        visibility: visible;
+
+        z-index: 9999 !important;
+
+        overflow: hidden;
+        border-radius: 20px;
+
+        border: 2px solid #00E5FF;
+
+        box-shadow:
+            0 0 15px rgba(0,229,255,0.4),
+            0 0 25px rgba(168,85,247,0.3);
+    }
+
+    .floating-avatar-img {
+        display: block !important;
+
+        position: absolute;
+        inset: 0;
+
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover;
+    }
+
+    .floating-avatar:not(.show-graduation)
+    .github-avatar {
+        opacity: 1;
+    }
+
+    .floating-avatar.show-graduation
+    .github-avatar {
+        opacity: 0;
+    }
+
+    .floating-avatar.show-graduation
+    .graduation-avatar {
+        opacity: 1;
+    }
+
+    .floating-avatar.hide-avatar {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
