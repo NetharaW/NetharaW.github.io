@@ -1,0 +1,109 @@
+/* Nethara portfolio: mobile layout overrides.
+   Load AFTER style.css and neon-theme.css. Desktop remains unchanged. */
+@media (max-width: 900px) {
+  html { scroll-padding-top: 132px; }
+  body { min-width: 0; }
+  img, video, iframe, svg { max-width: 100%; }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 5% 10px;
+    width: 100%;
+  }
+  nav .logo { flex: 1 0 100%; font-size: 22px; line-height: 1.25; }
+  nav .nav-links {
+    display: flex;
+    flex: 1 1 100%;
+    gap: 8px;
+    min-width: 0;
+    width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 0 8px;
+  }
+  nav .nav-links::-webkit-scrollbar { display: none; }
+  nav .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 12px;
+    padding: 8px 12px;
+    border: 1px solid rgba(168,85,247,.22);
+    border-radius: 999px;
+    background: rgba(59,10,107,.12);
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+  nav .nav-links a:focus-visible { border-color: #00E5FF; }
+  .section {
+    min-height: auto;
+    padding: 105px 6% 65px;
+    width: 100%;
+  }
+  .container, .hero-container, .hero-content, .about-content,
+  .section-header, .timeline-card, .timeline-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .section:not(.hero) { display: block; }
+  .hero { min-height: 100svh; display: flex; align-items: center; padding-top: 170px; }
+  .hero h1 { font-size: clamp(42px, 10.5vw, 78px); line-height: 1.04; letter-spacing: -.045em; overflow-wrap: anywhere; }
+  .hero h2 { font-size: clamp(18px, 4.6vw, 25px); line-height: 1.4; }
+  .hero p, .about-content p, .section-intro, .contact-description {
+    font-size: 15px; line-height: 1.75;
+  }
+  .section-header h2, .container > h2, .about-content h2, .contact h2 {
+    font-size: clamp(30px, 7.5vw, 48px);
+    line-height: 1.13;
+    letter-spacing: -.035em;
+    overflow-wrap: anywhere;
+  }
+  .floating-avatar { display: none; }
+  .skills-grid, .projects-grid, .certifications-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .skill-card, .project-card, .certification-card {
+    min-width: 0;
+    min-height: auto;
+    padding: 22px;
+    border-radius: 18px;
+    overflow-wrap: anywhere;
+  }
+  .project-top { margin-bottom: 25px; flex-wrap: wrap; gap: 8px; }
+  .project-card h3 { font-size: 23px; line-height: 1.3; }
+  /* Override the timeline desktop declaration at the end of style.css */
+  .timeline-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px;
+    margin-top: 28px;
+    overflow-wrap: anywhere;
+  }
+  .timeline-content h3 { font-size: 20px; }
+  .timeline-content h4 { font-size: 15px; }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 30px; }
+  .contact-card { width: 100%; max-width: 100%; padding: 20px; min-width: 0; }
+  .contact-card strong { overflow-wrap: anywhere; }
+  .social-links { flex-wrap: wrap; justify-content: center; gap: 16px 22px; }
+  footer { flex-direction: column; text-align: center; gap: 10px; padding: 26px 6%; }
+}
+@media (max-width: 480px) {
+  nav { padding-inline: 5%; }
+  .section { padding-inline: 6%; padding-bottom: 56px; }
+  .hero { padding-top: 160px; }
+  .hero h1 { font-size: clamp(40px, 11vw, 55px); }
+  .small-text { font-size: 15px; }
+  .hero-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero-buttons .button { margin-top: 0; width: 100%; text-align: center; padding: 14px 18px; }
+  .hero-buttons { margin-top: 27px; }
+  .skill-card, .project-card, .certification-card, .timeline-card { padding: 19px; }
+  .resume-btn { max-width: 100%; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  nav .nav-links { scroll-behavior: auto; }
+}
