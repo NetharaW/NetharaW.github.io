@@ -1,0 +1,79 @@
+/* Nethara portfolio — Jet Black / Royal Amethyst / Electric Cyan
+ :root {
+  --jet: #050505;
+  --amethyst: #3B0A6B;
+  --purple-light: #A855F7;
+  --cyan: #00E5FF;
+  --text-main: #F7F5FF;
+  --text-muted: #B7B4C5;
+}
+html { scroll-behavior: smooth; }
+body { background-color: var(--jet); color: var(--text-main); }
+::selection { background: var(--amethyst); color: white; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+/* Refined neon atmosphere — no extra markup needed */
+.hero {
+  background:
+    radial-gradient(ellipse at 78% 30%, rgba(0,229,255,.12), transparent 36%),
+    radial-gradient(ellipse at 35% 72%, rgba(59,10,107,.40), transparent 47%),
+    var(--jet);
+}
+.hero h1 span {
+  color: var(--purple-light);
+  background: linear-gradient(110deg, #D3B2FF 8%, #A855F7 42%, #00E5FF 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.small-text, .section-label { color: var(--cyan); letter-spacing: .09em; }
+.hero h2 { color: #D3CDE2; }
+.hero p, .about-description, .section-intro, .contact-description { color: var(--text-muted); }
+.logo { color: #fff; text-shadow: 0 0 22px rgba(168,85,247,.35); }
+.nav-links a { transition: color .25s ease, text-shadow .25s ease; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--cyan); text-shadow: 0 0 16px rgba(0,229,255,.35); }
+/* Purple-first CTA with a hint of cyan */
+.button:not(.button-secondary), .resume-btn {
+  border: 1px solid rgba(0,229,255,.48);
+  background: linear-gradient(115deg, var(--amethyst), #7223B1 62%, #006F84);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(59,10,107,.24);
+}
+.button:not(.button-secondary):hover, .resume-btn:hover {
+  background: linear-gradient(115deg, #5B148F, #8228C5 58%, #008BA3);
+  box-shadow: 0 10px 35px rgba(0,229,255,.2), 0 8px 32px rgba(168,85,247,.22);
+}
+.button-secondary { border-color: rgba(0,229,255,.55); color: #E4FAFF; }
+.button-secondary:hover { border-color: var(--cyan); background: rgba(0,229,255,.10); box-shadow: 0 0 24px rgba(0,229,255,.12); }
+/* Existing skill/project components keep their layout */
+.skill-card, .project-card {
+  border-color: rgba(168,85,247,.20);
+  background: linear-gradient(145deg, rgba(59,10,107,.14), rgba(255,255,255,.018) 70%);
+}
+.skill-card:hover, .project-card:hover {
+  border-color: rgba(0,229,255,.72);
+  background: linear-gradient(145deg, rgba(59,10,107,.22), rgba(0,229,255,.045));
+  box-shadow: 0 16px 45px rgba(0,229,255,.09), 0 14px 42px rgba(59,10,107,.18);
+}
+.skill-number, .project-number, .resume-number { color: var(--cyan); }
+.project-card h4 { color: #BC8CFF; }
+.skill-tags span, .project-tech span { border-color: rgba(0,229,255,.22); color: #D2D0DE; }
+.skill-tags span:hover, .project-tech span:hover { border-color: var(--cyan); color: var(--cyan); }
+.ai-project { background: linear-gradient(135deg, rgba(59,10,107,.28), rgba(0,229,255,.06)); }
+.projects-section {
+  background: radial-gradient(circle at 85% 35%, rgba(0,229,255,.07), transparent 34%),
+              radial-gradient(circle at 15% 75%, rgba(59,10,107,.16), transparent 42%);
+}
+.contact {
+  background: radial-gradient(circle at 52% 36%, rgba(59,10,107,.27), transparent 42%),
+              radial-gradient(circle at 75% 65%, rgba(0,229,255,.07), transparent 35%);
+}
+.contact h2 span, .about-content h2 span {
+  background: linear-gradient(100deg, #A855F7, #00E5FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .nav-links a { transition: none; }
+}
